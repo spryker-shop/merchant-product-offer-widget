@@ -50,16 +50,21 @@ class MerchantProductOfferReader implements MerchantProductOfferReaderInterface
     /**
      * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
      * @param string $localeName
+     * @param array $context
      *
      * @return array<\Generated\Shared\Transfer\ProductOfferStorageTransfer>
      */
-    public function getProductOffers(ProductViewTransfer $productViewTransfer, string $localeName): array
-    {
+    public function getProductOffers(
+        ProductViewTransfer $productViewTransfer,
+        string $localeName,
+        array $context = []
+    ): array {
         if (!$productViewTransfer->getIdProductConcrete()) {
             return [];
         }
 
         $productOfferStorageCriteriaTransfer = (new ProductOfferStorageCriteriaTransfer())
+            ->fromArray($context, true)
             ->fromArray($this->shopContextResolver->resolve()->modifiedToArray(), true);
 
         /** @var string $sku */

@@ -14,6 +14,7 @@
     currencyIsoCode: required,
     isRadioButtonVisible: false,
     merchantReference: null,
+    pageReload: true,
 } %}
 
 {% block extraClass %} spacing-y{% endblock %}
@@ -44,12 +45,14 @@
                             },
                         } only %}
 
-                        {% include molecule('page-location-search-params-updater', 'MerchantProductOfferWidget') with {
-                            attributes: {
-                                'trigger-class': config.jsName ~ '__trigger-' ~ data.productOfferReference,
-                                'search-params': searchParams,
-                            },
-                        } only %}
+                        {% if data.pageReload %}
+                            {% include molecule('page-location-search-params-updater', 'MerchantProductOfferWidget') with {
+                                attributes: {
+                                    'trigger-class': config.jsName ~ '__trigger-' ~ data.productOfferReference,
+                                    'search-params': searchParams,
+                                },
+                            } only %}
+                        {% endif %}
                     {% endblock %}
                 </div>
             {% endblock %}
