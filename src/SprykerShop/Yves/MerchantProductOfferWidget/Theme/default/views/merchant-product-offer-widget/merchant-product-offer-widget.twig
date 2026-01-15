@@ -8,6 +8,8 @@
     productView: _widget.productView,
     isTitleVisible: true,
     pageReload: true,
+    isSingleOffer: false,
+    isDefaultOfferChecked: true,
 } %}
 
 {% block template %}
@@ -28,7 +30,7 @@
                             {% block productOffer %}
                                 {% embed molecule('merchant-product-offer-item', 'MerchantProductOfferWidget') with {
                                     data: {
-                                        isChecked: data.productView.productOfferReference is same as(productOffer.productOfferReference),
+                                        isChecked: data.isDefaultOfferChecked ? data.isSingleOffer or data.productView.productOfferReference is same as(productOffer.productOfferReference) : false,
                                         radioGroupName: 'product_offer_reference',
                                         productOfferReference: productOffer.productOfferReference | default,
                                         merchantName: productOffer.merchantStorage.name | default,
