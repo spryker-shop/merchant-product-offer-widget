@@ -46,7 +46,7 @@
                         } only %}
 
                         {% if data.pageReload %}
-                            {% include molecule('page-location-search-params-updater', 'MerchantProductOfferWidget') with {
+                            {% include molecule('page-location-search-params-updater') with {
                                 attributes: {
                                     'trigger-class': config.jsName ~ '__trigger-' ~ data.productOfferReference,
                                     'search-params': searchParams,

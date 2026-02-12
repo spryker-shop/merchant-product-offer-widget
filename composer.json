@@ -9,7 +9,7 @@
         "spryker-shop/merchant-product-offer-widget-extension": "^1.0.0",
         "spryker-shop/product-search-widget-extension": "^1.0.0",
         "spryker-shop/quick-order-page-extension": "^1.2.0",
-        "spryker-shop/shop-ui": "^1.58.0",
+        "spryker-shop/shop-ui": "^1.102.0",
         "spryker-shop/wishlist-page-extension": "^1.0.0",
         "spryker/application": "^3.28.0",
         "spryker/kernel": "^3.52.0",
