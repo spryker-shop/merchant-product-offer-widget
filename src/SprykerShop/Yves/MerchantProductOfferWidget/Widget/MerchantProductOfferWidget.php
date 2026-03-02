@@ -15,38 +15,22 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class MerchantProductOfferWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     * @param array $context
-     */
     public function __construct(ProductViewTransfer $productViewTransfer, array $context = [])
     {
         $this->addProductOfferCollection($productViewTransfer, $context);
         $this->addProductViewParameter($productViewTransfer);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'MerchantProductOfferWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@MerchantProductOfferWidget/views/merchant-product-offer-widget/merchant-product-offer-widget.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     * @param array $context
-     *
-     * @return void
-     */
     protected function addProductOfferCollection(
         ProductViewTransfer $productViewTransfer,
         array $context = []
@@ -59,11 +43,6 @@ class MerchantProductOfferWidget extends AbstractWidget
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return void
-     */
     protected function addProductViewParameter(ProductViewTransfer $productViewTransfer): void
     {
         $this->addParameter('productView', $productViewTransfer);

@@ -26,21 +26,11 @@ class MerchantProductOfferWidgetToProductOfferStorageClientBridge implements Mer
         $this->productOfferStorageClient = $productOfferStorageClient;
     }
 
-    /**
-     * @param string $productOfferReference
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferStorageTransfer|null
-     */
     public function findProductOfferStorageByReference(string $productOfferReference): ?ProductOfferStorageTransfer
     {
         return $this->productOfferStorageClient->findProductOfferStorageByReference($productOfferReference);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferStorageCollectionTransfer
-     */
     public function getProductOfferStoragesBySkus(
         ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
     ): ProductOfferStorageCollectionTransfer {

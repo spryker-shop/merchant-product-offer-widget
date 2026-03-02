@@ -23,9 +23,6 @@ class MerchantProductOfferExpander implements MerchantProductOfferExpanderInterf
      */
     protected $merchantProductOfferReader;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantProductOfferWidget\Reader\MerchantProductOfferReaderInterface $merchantProductOfferReader
-     */
     public function __construct(MerchantProductOfferReaderInterface $merchantProductOfferReader)
     {
         $this->merchantProductOfferReader = $merchantProductOfferReader;

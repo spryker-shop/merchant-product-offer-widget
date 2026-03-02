@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\MerchantStorageTransfer;
 
 interface MerchantProductOfferWidgetToMerchantStorageClientInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantStorageCriteriaTransfer $merchantStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantStorageTransfer|null
-     */
     public function findOne(MerchantStorageCriteriaTransfer $merchantStorageCriteriaTransfer): ?MerchantStorageTransfer;
 
     /**

@@ -13,18 +13,8 @@ use Generated\Shared\Transfer\ProductOfferStorageTransfer;
 
 interface MerchantProductOfferWidgetToProductOfferStorageClientInterface
 {
-    /**
-     * @param string $productOfferReference
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferStorageTransfer|null
-     */
     public function findProductOfferStorageByReference(string $productOfferReference): ?ProductOfferStorageTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferStorageCollectionTransfer
-     */
     public function getProductOfferStoragesBySkus(
         ProductOfferStorageCriteriaTransfer $productOfferStorageCriteriaTransfer
     ): ProductOfferStorageCollectionTransfer;

@@ -27,9 +27,6 @@ class MerchantProductOfferQuickOrderFormExpander implements MerchantProductOffer
      */
     protected $merchantProductOffersSelectFormDataProvider;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantProductOfferWidget\Form\DataProvider\MerchantProductOffersSelectFormDataProvider $merchantProductOffersSelectFormDataProvider
-     */
     public function __construct(MerchantProductOffersSelectFormDataProvider $merchantProductOffersSelectFormDataProvider)
     {
         $this->merchantProductOffersSelectFormDataProvider = $merchantProductOffersSelectFormDataProvider;

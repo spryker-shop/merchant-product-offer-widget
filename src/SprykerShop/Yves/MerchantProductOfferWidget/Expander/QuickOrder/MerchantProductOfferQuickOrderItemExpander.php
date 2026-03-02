@@ -17,19 +17,11 @@ class MerchantProductOfferQuickOrderItemExpander implements MerchantProductOffer
   */
     protected $productOfferStorageClient;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantProductOfferWidget\Dependency\Client\MerchantProductOfferWidgetToProductOfferStorageClientInterface $productOfferStorageClient
-     */
     public function __construct(MerchantProductOfferWidgetToProductOfferStorageClientInterface $productOfferStorageClient)
     {
         $this->productOfferStorageClient = $productOfferStorageClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function expandItem(ItemTransfer $itemTransfer): ItemTransfer
     {
         /** @var string $productOfferReference */

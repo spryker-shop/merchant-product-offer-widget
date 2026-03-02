@@ -30,11 +30,6 @@ class MerchantProductOffersSelectForm extends AbstractType
      */
     protected const FIELD_PRODUCT_OFFER_REFERENCE = 'product_offer_reference';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -42,9 +37,6 @@ class MerchantProductOffersSelectForm extends AbstractType
         $resolver->setRequired(static::PRODUCT_OFFER_REFERENCE_CHOICES);
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return '';

@@ -32,11 +32,6 @@ class MerchantProductOfferReader implements MerchantProductOfferReaderInterface
      */
     protected $merchantStorageClient;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantProductOfferWidget\Dependency\Client\MerchantProductOfferWidgetToProductOfferStorageClientInterface $productOfferStorageClient
-     * @param \SprykerShop\Yves\MerchantProductOfferWidget\Resolver\ShopContextResolverInterface $shopContextResolver
-     * @param \SprykerShop\Yves\MerchantProductOfferWidget\Dependency\Client\MerchantProductOfferWidgetToMerchantStorageClientInterface $merchantStorageClient
-     */
     public function __construct(
         MerchantProductOfferWidgetToProductOfferStorageClientInterface $productOfferStorageClient,
         ShopContextResolverInterface $shopContextResolver,
@@ -83,11 +78,6 @@ class MerchantProductOfferReader implements MerchantProductOfferReaderInterface
         return $productOffers;
     }
 
-    /**
-     * @param string $productOfferReference
-     *
-     * @return string|null
-     */
     public function findMerchantReferenceByProductOfferReference(string $productOfferReference): ?string
     {
         $productOfferStorageTransfer = $this->productOfferStorageClient
@@ -110,12 +100,6 @@ class MerchantProductOfferReader implements MerchantProductOfferReaderInterface
         return $merchantStorageTransfer->getMerchantReference();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantStorageTransfer $merchantStorageTransfer
-     * @param string $localeName
-     *
-     * @return string
-     */
     protected function getResolvedUrl(MerchantStorageTransfer $merchantStorageTransfer, string $localeName): string
     {
         $locale = strstr($localeName, '_', true);

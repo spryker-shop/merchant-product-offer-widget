@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\ItemTransfer;
 
 interface MerchantProductOfferQuickOrderItemExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function expandItem(ItemTransfer $itemTransfer): ItemTransfer;
 }

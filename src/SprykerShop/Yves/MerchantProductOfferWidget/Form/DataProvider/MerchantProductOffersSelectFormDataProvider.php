@@ -127,11 +127,6 @@ class MerchantProductOffersSelectFormDataProvider
         return $this->merchantStorageClient->get($merchantStorageCriteriaTransfer);
     }
 
-    /**
-     * @param string $sku
-     *
-     * @return \Generated\Shared\Transfer\ProductOfferStorageCollectionTransfer
-     */
     protected function getProductOffersBySku(string $sku): ProductOfferStorageCollectionTransfer
     {
         $productOfferStorageCriteriaTransfer = (new ProductOfferStorageCriteriaTransfer())

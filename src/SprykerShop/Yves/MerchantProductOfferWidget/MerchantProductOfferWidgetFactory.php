@@ -28,9 +28,6 @@ use Symfony\Component\Form\FormInterface;
 
 class MerchantProductOfferWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\MerchantProductOfferWidget\Reader\MerchantProductOfferReaderInterface
-     */
     public function createProductOfferReader(): MerchantProductOfferReaderInterface
     {
         return new MerchantProductOfferReader(
@@ -40,9 +37,6 @@ class MerchantProductOfferWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductOfferWidget\Expander\MerchantProductOfferExpanderInterface
-     */
     public function createMerchantProductOfferExpander(): MerchantProductOfferExpanderInterface
     {
         return new MerchantProductOfferExpander(
@@ -50,17 +44,11 @@ class MerchantProductOfferWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductOfferWidget\Resolver\ShopContextResolverInterface
-     */
     public function createShopContextResolver(): ShopContextResolverInterface
     {
         return new ShopContextResolver($this->getContainer());
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductOfferWidget\Expander\QuickOrder\MerchantProductOfferQuickOrderFormExpanderInterface
-     */
     public function createMerchantProductOfferQuickOrderFormExpander(): MerchantProductOfferQuickOrderFormExpanderInterface
     {
         return new MerchantProductOfferQuickOrderFormExpander(
@@ -68,9 +56,6 @@ class MerchantProductOfferWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductOfferWidget\Expander\QuickOrder\MerchantProductOfferQuickOrderItemExpanderInterface
-     */
     public function createMerchantProductOfferQuickOrderItemExpander(): MerchantProductOfferQuickOrderItemExpanderInterface
     {
         return new MerchantProductOfferQuickOrderItemExpander(
@@ -78,17 +63,11 @@ class MerchantProductOfferWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductOfferWidget\Dependency\Client\MerchantProductOfferWidgetToProductOfferStorageClientInterface
-     */
     public function getProductOfferStorageClient(): MerchantProductOfferWidgetToProductOfferStorageClientInterface
     {
         return $this->getProvidedDependency(MerchantProductOfferWidgetDependencyProvider::CLIENT_PRODUCT_OFFER_STORAGE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductOfferWidget\Dependency\Client\MerchantProductOfferWidgetToMerchantStorageClientInterface
-     */
     public function getMerchantStorageClient(): MerchantProductOfferWidgetToMerchantStorageClientInterface
     {
         return $this->getProvidedDependency(MerchantProductOfferWidgetDependencyProvider::CLIENT_MERCHANT_STORAGE);
@@ -106,9 +85,6 @@ class MerchantProductOfferWidgetFactory extends AbstractFactory
             ->create(MerchantProductOffersSelectForm::class, $data, $options);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductOfferWidget\Form\DataProvider\MerchantProductOffersSelectFormDataProvider
-     */
     public function createMerchantProductOffersSelectFormDataProvider(): MerchantProductOffersSelectFormDataProvider
     {
         return new MerchantProductOffersSelectFormDataProvider(
@@ -119,9 +95,6 @@ class MerchantProductOfferWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactory
-     */
     public function getFormFactory(): FormFactory
     {
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);

@@ -31,25 +31,16 @@ class MerchantProductOffersSelectWidget extends AbstractWidget
         $this->addDataUrlParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'MerchantProductOffersSelectWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@MerchantProductOfferWidget/views/merchant-product-offers-select-widget/merchant-product-offers-select-widget.twig';
     }
 
-    /**
-     * @return void
-     */
     protected function addDataUrlParameter(): void
     {
         $this->addParameter(static::PARAMETER_DATA_URL, static::ROUTE_NAME_MERCHANT_PRODUCT_OFFERS_SELECT);

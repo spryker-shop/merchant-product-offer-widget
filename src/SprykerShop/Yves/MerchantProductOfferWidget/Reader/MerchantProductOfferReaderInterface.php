@@ -24,10 +24,5 @@ interface MerchantProductOfferReaderInterface
         array $context = []
     ): array;
 
-    /**
-     * @param string $productOfferReference
-     *
-     * @return string|null
-     */
     public function findMerchantReferenceByProductOfferReference(string $productOfferReference): ?string;
 }

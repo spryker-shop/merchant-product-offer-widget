@@ -28,11 +28,6 @@ class MerchantProductOffersSelectController extends AbstractController
      */
     protected const URL_PARAM_SKU = 'sku';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Spryker\Yves\Kernel\View\View
-     */
     public function indexAction(Request $request): View
     {
         $sku = (string)$request->query->get(static::URL_PARAM_SKU);
