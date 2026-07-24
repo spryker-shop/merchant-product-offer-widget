@@ -19,14 +19,10 @@ class MerchantProductOfferWidgetRouteProviderPlugin extends AbstractRouteProvide
     public const ROUTE_NAME_MERCHANT_PRODUCT_OFFERS_SELECT = 'merchant-product-offer-widget/merchant-product-offers-select';
 
     /**
-     * Specification:
+     * {@inheritDoc}
      * - Adds Routes to the RouteCollection.
      *
      * @api
-     *
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
      */
     public function addRoutes(RouteCollection $routeCollection): RouteCollection
     {
