@@ -1,3 +1,5 @@
+@use 'sass:meta';
+
 @mixin merchant-product-offer-widget-merchant-product-offer-dynamic-form-elements(
     $name: '.merchant-product-offer-dynamic-form-elements'
 ) {
@@ -5,6 +7,10 @@
         position: relative;
         margin-bottom: 0.5rem;
         width: 100%;
+
+        @if meta.mixin-exists(merchant-product-offer-widget-merchant-product-offer-dynamic-form-elements-base-hook) {
+            @include merchant-product-offer-widget-merchant-product-offer-dynamic-form-elements-base-hook;
+        }
 
         &__loader {
             min-height: 3rem;

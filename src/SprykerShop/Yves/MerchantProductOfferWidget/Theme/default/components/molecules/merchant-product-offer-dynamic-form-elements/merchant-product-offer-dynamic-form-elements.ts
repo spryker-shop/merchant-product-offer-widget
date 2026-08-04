@@ -7,8 +7,6 @@ export default class MerchantProductOfferDynamicFormElements extends Component {
     protected ajaxProvider: AjaxProvider;
     protected submitButton: HTMLButtonElement;
 
-    protected readyCallback(): void {}
-
     protected init(): void {
         this.autocompleteForm = <AutocompleteForm>document.getElementsByClassName(this.autocompleteFormClassName)[0];
         this.ajaxProvider = <AjaxProvider>this.getElementsByClassName(`${this.jsName}__provider`)[0];
