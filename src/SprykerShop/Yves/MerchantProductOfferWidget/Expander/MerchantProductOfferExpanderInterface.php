@@ -33,4 +33,9 @@ interface MerchantProductOfferExpanderInterface
         ItemTransfer $itemTransfer,
         array $params
     ): ItemTransfer;
+
+    public function expandItemTransferWithReplacedItemProductOffer(
+        ItemTransfer $itemTransfer,
+        ItemTransfer $replacedItemTransfer
+    ): ItemTransfer;
 }

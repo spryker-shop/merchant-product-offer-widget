@@ -78,6 +78,26 @@ class MerchantProductOfferReader implements MerchantProductOfferReaderInterface
         return $productOffers;
     }
 
+    public function findProductOfferReferenceByProductConcreteSkuAndMerchantReference(
+        string $productConcreteSku,
+        string $merchantReference
+    ): ?string {
+        $productOfferStorageCriteriaTransfer = (new ProductOfferStorageCriteriaTransfer())
+            ->fromArray($this->shopContextResolver->resolve()->modifiedToArray(), true)
+            ->addProductConcreteSku($productConcreteSku);
+
+        $productOfferStorageCollectionTransfer = $this->productOfferStorageClient
+            ->getProductOfferStoragesBySkus($productOfferStorageCriteriaTransfer);
+
+        foreach ($productOfferStorageCollectionTransfer->getProductOffers() as $productOfferStorageTransfer) {
+            if ($productOfferStorageTransfer->getMerchantReference() === $merchantReference) {
+                return $productOfferStorageTransfer->getProductOfferReference();
+            }
+        }
+
+        return null;
+    }
+
     public function findMerchantReferenceByProductOfferReference(string $productOfferReference): ?string
     {
         $productOfferStorageTransfer = $this->productOfferStorageClient

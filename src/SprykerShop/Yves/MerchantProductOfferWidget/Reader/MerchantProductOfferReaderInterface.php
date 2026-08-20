@@ -25,4 +25,9 @@ interface MerchantProductOfferReaderInterface
     ): array;
 
     public function findMerchantReferenceByProductOfferReference(string $productOfferReference): ?string;
+
+    public function findProductOfferReferenceByProductConcreteSkuAndMerchantReference(
+        string $productConcreteSku,
+        string $merchantReference
+    ): ?string;
 }

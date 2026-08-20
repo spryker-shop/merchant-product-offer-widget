@@ -61,6 +61,35 @@ class MerchantProductOfferExpander implements MerchantProductOfferExpanderInterf
     }
 
     /**
+     * Keeps the product offer of the replaced cart item by resolving the product offer of the same merchant
+     * for the new product concrete. Leaves the item untouched when the merchant has no product offer for it.
+     */
+    public function expandItemTransferWithReplacedItemProductOffer(
+        ItemTransfer $itemTransfer,
+        ItemTransfer $replacedItemTransfer
+    ): ItemTransfer {
+        $merchantReference = $replacedItemTransfer->getMerchantReference();
+
+        if (!$replacedItemTransfer->getProductOfferReference() || !$merchantReference) {
+            return $itemTransfer;
+        }
+
+        $productOfferReference = $this->merchantProductOfferReader
+            ->findProductOfferReferenceByProductConcreteSkuAndMerchantReference(
+                $itemTransfer->getSkuOrFail(),
+                $merchantReference,
+            );
+
+        if (!$productOfferReference) {
+            return $itemTransfer;
+        }
+
+        return $itemTransfer
+            ->setProductOfferReference($productOfferReference)
+            ->setMerchantReference($merchantReference);
+    }
+
+    /**
      * @param \Generated\Shared\Transfer\WishlistItemTransfer|\Generated\Shared\Transfer\ItemTransfer $itemTransfer
      * @param array<string, mixed> $params
      *
