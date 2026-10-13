@@ -51,6 +51,7 @@
     <transfer name="Item">
         <property name="productOfferReference" type="string"/>
         <property name="merchantReference" type="string"/>
+        <property name="sku" type="string"/>
     </transfer>
 
     <transfer name="ProductOffer">
