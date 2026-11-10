@@ -7,9 +7,9 @@
 
 namespace SprykerShop\Shared\MerchantProductOfferWidget;
 
-use Spryker\Shared\Kernel\AbstractBundleConfig;
+use Spryker\Shared\Kernel\AbstractSharedConfig;
 
-class MerchantProductOfferWidgetConfig extends AbstractBundleConfig
+class MerchantProductOfferWidgetConfig extends AbstractSharedConfig
 {
     /**
      * Specification:
